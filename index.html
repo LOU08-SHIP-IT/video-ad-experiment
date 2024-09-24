@@ -99,6 +99,10 @@
         adVideo.load(); 
         adVideo.play();
 
+        setTimeout(() => {
+            video.muted = false;
+        }, 300);
+
         // カウントダウン開始
         countdown.style.display = 'block';
         skipBtn.style.display = 'none'; // 初期状態ではスキップボタンを非表示
