@@ -96,24 +96,26 @@
         mainVideo.pause();  // メインビデオを一時停止
         adVideo.style.display = 'block';
         mainVideo.style.display = 'none';
-        adVideo.play();
+        adVideo.addEventListener('canplaythrough', () => {
+            adVideo.play();
 
-        // カウントダウン開始
-        countdown.style.display = 'block';
-        skipBtn.style.display = 'none'; // 初期状態ではスキップボタンを非表示
+            // カウントダウン開始
+            countdown.style.display = 'block';
+            skipBtn.style.display = 'none'; // 初期状態ではスキップボタンを非表示
 
-        const countdownInterval = setInterval(() => {
-            counter--;
-            countdown.textContent = counter;
-            if (counter <= 0) {
-                skipBtn.style.display = 'block';  // スキップボタンを表示
-                countdown.style.display = 'none';  // カウントダウンを非表示
-                clearInterval(countdownInterval);
-            }
-        }, 1000);
+            const countdownInterval = setInterval(() => {
+                counter--;
+                countdown.textContent = counter;
+                if (counter <= 0) {
+                    skipBtn.style.display = 'block';  // スキップボタンを表示
+                    countdown.style.display = 'none';  // カウントダウンを非表示
+                    clearInterval(countdownInterval);
+                }
+            }, 1000);
 
-        adVideo.addEventListener('ended', () => {
-            resumeMainVideo();
+            adVideo.addEventListener('ended', () => {
+                resumeMainVideo();
+            });
         });
     }
 
