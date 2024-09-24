@@ -68,7 +68,7 @@
         <source src="main2_video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <video id="adVideo" preload="auto" playsinline controls style="display: none;">
+    <video id="adVideo" preload="auto" playsinline controls muted style="display: none;">
         <source src="ad_video_right.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -96,7 +96,6 @@
         mainVideo.pause();  // メインビデオを一時停止
         adVideo.style.display = 'block';
         mainVideo.style.display = 'none';
-        adVideo.muted = true;
         adVideo.load(); 
         adVideo.play();
 
