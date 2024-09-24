@@ -13,7 +13,7 @@
         }
         #skipBtn {
             position: absolute;
-            bottom: 20px;
+            bottom: 55px;
             right: 20px;
             padding: 10px;
             background: rgba(0, 0, 0, 0.5);
@@ -25,8 +25,8 @@
         }
         #countdown {
             position: absolute;
-            bottom: 20px;
-            right: 100px;
+            bottom: 55px;
+            right: 20px;
             color: white;
             background: rgba(0, 0, 0, 0.5);
             padding: 10px;
@@ -60,7 +60,7 @@
 
     // メインビデオの途中で広告を再生する
     mainVideo.addEventListener('timeupdate', () => {
-        if (!adPlayed && mainVideo.currentTime >= 10) {  // 10秒で広告を挿入
+        if (!adPlayed && mainVideo.currentTime >= 30) {  // 30秒で広告を挿入
             playAd();
         }
     });
