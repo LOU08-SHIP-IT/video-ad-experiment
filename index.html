@@ -96,7 +96,9 @@
         mainVideo.pause();  // メインビデオを一時停止
         adVideo.style.display = 'block';
         mainVideo.style.display = 'none';
-        adVideo.play();
+        adVideo.addEventListener('canplaythrough', () => {
+            adVideo.play();
+        });
 
         // カウントダウン開始
         countdown.style.display = 'block';
