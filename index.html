@@ -96,6 +96,9 @@
         mainVideo.pause();  // メインビデオを一時停止
         adVideo.style.display = 'block';
         mainVideo.style.display = 'none';
+        video.muted = true;
+        video.setAttribute('playsinline', '');
+        video.autoplay = true;
         adVideo.load(); 
         adVideo.play();
 
